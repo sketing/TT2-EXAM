@@ -11,9 +11,16 @@ class UserTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() //W.I.P.
     {
-        Schema::create('users')
+        Schema::create('User', function(Blueprint $table){
+            $table->string('Username',30)->primary();
+            $table->string('Name', 30);
+            $table->string('Surname', 30);
+            $table->date('DoB');
+            $table->boolean('News Letter Checkbox');
+            $table->string('Role', 30);
+        })
     }
 
     /**
