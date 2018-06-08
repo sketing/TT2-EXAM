@@ -18,10 +18,10 @@ class AdressTable extends Migration
             $table->string('Country', 100);
             $table->string('City', 50);
             $table->string('Street', 50);
-            $table->string('House number', 5);
-            $table->string('Appartment Number', 5)->nullable();
-            $table->char('Post Index', 6);
-        })
+            $table->string('House_number', 5);
+            $table->string('Appartment_Number', 5)->nullable();
+            $table->char('Post_Index', 6);
+        });
     }
 
     /**
