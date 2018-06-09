@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/services', 'PagesController@services');
 /****************
  *  
  *     PAGES  

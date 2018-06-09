@@ -7,7 +7,17 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $title = 'Welcome to the Shop';
+        //return view('pages.index', compact('title'));
+        return view('pages.index')->with('title', $title);
+    }
+
+    public function services(){
+        $data = array(
+            'title' => 'Services' ,
+            'services' => ['Selling Stuff', 'Star Wars']
+        );
+        return view('pages.services')->with( $data);
     }
 
     public function basket(){
