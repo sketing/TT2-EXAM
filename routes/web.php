@@ -25,7 +25,7 @@ Route::get('/services', 'PagesController@services');
  * \  /  izveleto produktu, lai katram produktam
  *  \/   nevajadzetu taisit atsevisku lapu.
  *************************************************/
-Route::get('/product','PagesController@product');
+Route::get('/product', 'PagesController@product');
 
 Route::get('/shop', 'PagesController@shop');
 

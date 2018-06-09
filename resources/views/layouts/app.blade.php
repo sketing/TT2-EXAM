@@ -5,14 +5,11 @@
         <meta http-equiv="X-US-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        @require('bootstrap')
+        <!-- zemāk ir visi fucking, fucking, fucking...-->
+        <script src={{ asset("js/app.js") }}></script>
         <title>StarWars</title>
     </head>
     <body>
-        <!--
-        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.js') }}"></script>
-        <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
-        -->
         <!-- TOP PART-->
         <div id='site_top'>
             <div id='logo'>@include('inc.logo')</div>
