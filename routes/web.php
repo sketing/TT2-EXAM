@@ -31,9 +31,11 @@ Route::get('/shop', 'PagesController@shop');
 
 Route::get('/register', 'PagesController@register');
 
-Route::get('/basket', 'PagesController@basket');
+Route::get('/login', 'PagesController@login');
 
 Route::get('/user', 'PagesController@user');
+
+Route::get('/basket', 'PagesController@basket');
 
 Route::get('/employee','PagesController@employee');
 

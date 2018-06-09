@@ -21,7 +21,7 @@ class PagesController extends Controller
     }
 
     public function basket(){
-        return view('pages.about');
+        return view('pages.basket');
     }
 
     public function employee_addProduct(){
