@@ -11,45 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/shop', function (){
-    return view('shop');
-});
+Route::get('/', 'PagesController@index');
+/****************
+ *  
+ *     PAGES  
+ * 
+ ****************/
 /***************************************************
  *  ||   Par sho neesmu parliecinats kaa, bet
  *  ||   ideja ir izmantot template PRODUCT lapu,
  *  ||   kura izvelk datus no datu bazes un attelo 
  * \  /  izveleto produktu, lai katram produktam
  *  \/   nevajadzetu taisit atsevisku lapu.
- **************************************************/
-Route::get('/product', function (){
-    return view('product'); 
-});
+ *************************************************/
+Route::get('/product','PagesController@product');
 
-Route::get('/register', function (){
-    return view('register');
-});
+Route::get('/shop', 'PagesController@shop');
 
-Route::get('/basket', function (){
-    return view('basket');
-});
+Route::get('/register', 'PagesController@register');
 
-Route::get('/user', function (){
-    return view('user');
-});
+Route::get('/basket', 'PagesController@basket');
 
-Route::get('/employee', function (){
-    return view('employee');
-});
+Route::get('/user', 'PagesController@user');
 
-Route::get('/employee/addProduct', function (){
-    return view('employee_addProduct');
-});
+Route::get('/employee','PagesController@employee');
 
-Route::get('/employee/editProduct', function (){
-    return view('employee_editProduct.blade');
+Route::get('/employee/addProduct','PagesController@employee_addProduct');
+
+Route::get('/employee/editProduct', 'PagesController@employee_editProduct');
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
-});
