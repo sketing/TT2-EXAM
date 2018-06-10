@@ -20,7 +20,8 @@ class ProductTable extends Migration
             $table->decimal('Price', 7, 2);
             $table->unsignedInteger('Product_type_id');
             $table->foreign('Product_type_id')->references('Product_type_id')->on('Product_Type');
-            //$table->picture?
+            $table->unsignedInteger('Image_id');
+            $table->foreign('Image_id')->references('Image_id')->on('Image');
             $table->integer('Amount_in_storage');
             $table->timestamps();
         });    
