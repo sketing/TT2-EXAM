@@ -22,6 +22,7 @@ class ProductTable extends Migration
             $table->foreign('Product_type_id')->references('Product_type_id')->on('Product_Type');
             //$table->picture?
             $table->integer('Amount_in_storage');
+            $table->timestamps();
         });    
     }
 

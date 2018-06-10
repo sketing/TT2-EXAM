@@ -11,7 +11,7 @@ class UserTable extends Migration
      *
      * @return void
      */
-    public function up() //W.I.P.
+    public function up()
     {
         Schema::create('User', function(Blueprint $table){
             $table->increments('User_id');
@@ -27,6 +27,7 @@ class UserTable extends Migration
             $table->foreign('Paypal_id')->references('Paypal_id')->on('PayPal');
             $table->boolean('News_Letter_Checkbox');
             $table->string('Role', 30);
+            $table->timestamps();
         });
     }
 

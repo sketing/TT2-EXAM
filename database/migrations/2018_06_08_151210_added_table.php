@@ -19,7 +19,7 @@ class AddedTable extends Migration
             $table->foreign('Product_id')->references('Product_id')->on('Product');
             $table->unsignedInteger('User_id');
             $table->foreign('User_id')->references('User_id')->on('User');
-            $table->datetime('Added_date');
+            $table->timestamps();
         });
     }
 

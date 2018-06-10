@@ -16,6 +16,7 @@ class CreditCardTable extends Migration
          Schema::create('Credit_Card', function(Blueprint $table){
             $table->increments('Credit_card_id');
             $table->char('Credit_card_number', 16);
+            $table->timestamps();
         });
     }
 

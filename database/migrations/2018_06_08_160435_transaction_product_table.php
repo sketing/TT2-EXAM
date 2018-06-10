@@ -19,6 +19,7 @@ class TransactionProductTable extends Migration
             $table->unsignedInteger('Product_id');
             $table->foreign('Product_id')->references('Product_id')->on('Product');
             $table->decimal('Price_sold_for', 7, 2);
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class InBasketTable extends Migration
             $table->foreign('Basket_id')->references('Basket_id')->on('Shopping_Basket');
             $table->unsignedInteger('Product_id');
             $table->foreign('Product_id')->references('Product_id')->on('Product');
+            $table->timestamps();
         });
     }
 

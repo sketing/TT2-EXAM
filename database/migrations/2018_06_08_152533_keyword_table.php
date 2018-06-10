@@ -16,6 +16,7 @@ class KeywordTable extends Migration
         Schema::create('Keyword', function(Blueprint $table){
             $table->increments('Keyword_id');
             $table->string('Keyword', 100);
+            $table->timestamps();
         });   
     }
 

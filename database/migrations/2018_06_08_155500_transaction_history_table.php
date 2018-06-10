@@ -15,9 +15,9 @@ class TransactionHistoryTable extends Migration
     {
         Schema::create('Transaction_History', function(Blueprint $table){
             $table->increments('Transaction_id');
-            $table->datetime('Bought_date');
             $table->unsignedInteger('User_id');
             $table->foreign('User_id')->references('User_id')->on('User');
+            $table->timestamps();
         });
     }
 

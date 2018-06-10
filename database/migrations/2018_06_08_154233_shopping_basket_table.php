@@ -18,6 +18,7 @@ class ShoppingBasketTable extends Migration
             $table->integer('Amount');
             $table->unsignedInteger('User_id');
             $table->foreign('User_id')->references('User_id')->on('User');
+            $table->timestamps();
         });
     }
 

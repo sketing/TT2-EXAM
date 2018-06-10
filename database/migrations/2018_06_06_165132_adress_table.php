@@ -21,6 +21,7 @@ class AdressTable extends Migration
             $table->string('House_number', 5);
             $table->string('Appartment_Number', 5)->nullable();
             $table->char('Post_Index', 6);
+            $table->timestamps();
         });
     }
 

@@ -16,6 +16,7 @@ class PaypalTable extends Migration
         Schema::create('PayPal', function(Blueprint $table){
             $table->increments('Paypal_id');
             $table->boolean('Has_Paypal');
+            $table->timestamps();
         });
     }
 

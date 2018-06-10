@@ -19,6 +19,7 @@ class ReviewTable extends Migration
             $table->string('Comment', 500);
             $table->unsignedInteger('User_id');
             $table->foreign('User_id')->references('User_id')->on('User');
+            $table->timestamps();
         });
     }
 
