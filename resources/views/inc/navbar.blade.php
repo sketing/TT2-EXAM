@@ -18,12 +18,12 @@
     
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item nav-link" href="#">Action</a>
-                <a class="dropdown-item nav-link" href="#">Another action</a>
-                <a class="dropdown-item nav-link" href="#">Something else here</a>
+                <a class="dropdown-item nav-link" href="#">Category 1</a>
+                <a class="dropdown-item nav-link" href="#">Category 2</a>
+                <a class="dropdown-item nav-link" href="#">Category 3</a>
             </div>
         </li>
 

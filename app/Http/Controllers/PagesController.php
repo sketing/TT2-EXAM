@@ -45,7 +45,11 @@ class PagesController extends Controller
     }
 
     public function shop(){
-        return view('pages.shop');
+        $data = array(
+            'title' => 'Items' ,
+            'items' => ['item 1', 'item 2', 'item 3']
+        );
+        return view('pages.shop')->with( $data);
     }
 
     public function user(){
