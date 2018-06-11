@@ -1,6 +1,2 @@
 @section('banner_image')
-        <div class="sidebar">
-            <h3>Banner_image</h3>
-            BANNER_IMAGE
-            @show
-        </div>
+<img src={{asset('images/Header2.png')}} style="width:100%; margin-bottom:15px;">

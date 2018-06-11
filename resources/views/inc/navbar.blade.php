@@ -13,9 +13,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/shop">Shop</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link " href="/basket">Basket</a>
-        </li>
+        
     
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,9 +27,20 @@
         </li>
 
         </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                    <a class="nav-link " href="/basket">Basket</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link " href="/basket">Login</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link " href="/basket">Register</a>
+            </li>
+        </ul>
         <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
