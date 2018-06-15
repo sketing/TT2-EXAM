@@ -17,7 +17,8 @@
     <style type="text/css">/* Chart.js */
     @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
     
-      <body>
+      <body style="overflow: scroll;">
+        <script src={{ asset("js/custom.js") }}></script>
         @include('inc.banner_image')                
         @include('inc.navbar')    
         <div class="container-fluid">
@@ -31,7 +32,7 @@
     </body>
 </html>
 <!--
-@yield('content')
+{{--@yield('content')--}}
 <h1 class="h2">Dashboard</h1>
 <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
@@ -47,7 +48,7 @@
 <!--
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     
-@yield('content')
+P{{--@yield('content')--}}
 
 <h1 class="h2">Dashboard</h1>
 <div class="btn-toolbar mb-2 mb-md-0">

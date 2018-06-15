@@ -37,6 +37,8 @@ Route::get('/user', 'PagesController@user');
 
 Route::get('/basket', 'PagesController@basket');
 
+Route::get('/checkout', 'PagesController@checkout');
+
 Route::get('/employee','PagesController@employee');
 
 Route::get('/employee/addProduct','PagesController@employee_addProduct');

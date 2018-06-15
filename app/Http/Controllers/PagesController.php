@@ -24,6 +24,10 @@ class PagesController extends Controller
         return view('pages.basket');
     }
 
+    public function checkout(){
+        return view('pages.checkout');
+    }
+
     public function employee_addProduct(){
         return view('pages.employee_addProduct');
     }
