@@ -24,7 +24,7 @@
                         @if(count($products)>0)
                             @foreach($products as $product)
                             <tr>
-                                    <td><a href="/product/{{$product->id}}">{{$product->title}}</a></td>
+                                    <td><a href="/products/{{$product->id}}">{{$product->title}}</a></td>
                                     <td> </td>
                                     <td> 
                                         {!!Form::open(['action' => ['ProductsController@destroy', $product->id],'method' => 'POST', 'class' => 'float-right'])!!}

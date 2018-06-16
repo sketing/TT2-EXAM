@@ -40,12 +40,16 @@
                     <a href="/products/{{$product->id}}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                     </a>
-                    <a href="/products/{{$product->id}}/edit">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </a>
-                    </div>
-                    <small class="text-muted">PRICE</small>
+                    @if(!Auth::guest())
+                        <a href="/products/{{$product->id}}/edit">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </a>
+                        @endif
+                        </div>
+                        <small class="text-muted">PRICE</small>
+                    @if(!Auth::guest())
                     <small>Written on {{$product->created_at}} by {{$product->user->name}}</small>
+                    @endif
                 </div>
             </div>
         </div>
