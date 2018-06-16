@@ -6,7 +6,7 @@
         {!!$product->body!!}
     </div>
     <hr>
-    <small>Written on {{$product->created_at}}</small>
+    <small>Written on {{$product->created_at}} by {{$product->user->name}}</small>
     <hr>
     <a href="/products/{{$product->id}}/edit" class="btn btn-default">Edit</a>
 

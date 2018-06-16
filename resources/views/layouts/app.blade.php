@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src={{ asset('js/app.js') }} defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row">
           @include('inc.sidebar')
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding-top:30px;">
               <div class="container">
                 @include('inc.messages')
                 @yield('content')
@@ -36,11 +36,9 @@
         </div>
       </div>
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{asset('js/ckeditor.js')}}"></script>
+    <!-- This Shit is not working -->
     <script>
-        CKEDITOR.replace('article-ckeditor'); alert("1");
+        CKEDITOR.replace('article-ckeditor');
     </script>
-
 </body>
 </html>

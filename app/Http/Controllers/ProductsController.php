@@ -10,6 +10,15 @@ use DB;
 class ProductsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>['index', 'show']]);
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -24,7 +33,6 @@ class ProductsController extends Controller
 
         $products=Product::orderBy('created_at','asc')->paginate(18);
         return view('products.index')->with('products', $products);
-        
     }
 
     /**
