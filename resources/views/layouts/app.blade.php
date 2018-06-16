@@ -1,64 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <!-- JS, jquery etc -->
-    <script src={{ asset("js/app.js") }}></script>
-    
-    <title>StarWars</title>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style type="text/css">/* Chart.js */
-    @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
-    
-      <body style="overflow: scroll;">
-        <script src={{ asset("js/custom.js") }}></script>
-        @include('inc.banner_image')                
-        @include('inc.navbar')    
-        <div class="container-fluid">
-          <div class="row">
-            @include('inc.sidebar')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+      @include('inc.banner_image')                
+      @include('inc.navbar')    
+      <div class="container-fluid">
+        <div class="row">
+          @include('inc.sidebar')
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-              @yield('content')
-          </main> 
+              <div class="container">
+                @include('inc.messages')
+                @yield('content')
+              </div>
+            </main> 
         </div>
       </div>
-    </body>
-</html>
-<!--
-{{--@yield('content')--}}
-<h1 class="h2">Dashboard</h1>
-<div class="btn-toolbar mb-2 mb-md-0">
-    <div class="btn-group mr-2">
-    <button class="btn btn-sm btn-outline-secondary">Share</button>
-    <button class="btn btn-sm btn-outline-secondary">Export</button>
     </div>
-    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-    This week
-    </button>
--->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{asset('js/ckeditor.js')}}"></script>
+    <script>
+        CKEDITOR.replace('article-ckeditor'); alert("1");
+    </script>
 
-<!--
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    
-P{{--@yield('content')--}}
-
-<h1 class="h2">Dashboard</h1>
-<div class="btn-toolbar mb-2 mb-md-0">
-  <div class="btn-group mr-2">
-    <button class="btn btn-sm btn-outline-secondary">Share</button>
-    <button class="btn btn-sm btn-outline-secondary">Export</button>
-  </div>
-  <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-    This week
-  </button>
-
-</div>-->
+</body>
+</html>

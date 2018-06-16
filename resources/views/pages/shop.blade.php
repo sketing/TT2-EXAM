@@ -28,9 +28,9 @@
             </div>
         </div>
         </div>
-        @endforeach
-        </div>
-        </div>
+    @endforeach
+    </div>
+    </div>
     </div>
     @endif
 @endsection

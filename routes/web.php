@@ -45,3 +45,8 @@ Route::get('/employee/addProduct','PagesController@employee_addProduct');
 
 Route::get('/employee/editProduct', 'PagesController@employee_editProduct');
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
+Route::resource('products', 'ProductsController');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
