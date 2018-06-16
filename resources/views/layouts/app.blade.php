@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <!-- JS, jquery etc -->
-    <script src={{ asset("js/app.js") }}></script>
-    
-    <title>StarWars</title>
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  <!-- JS, jquery etc -->
+  <script src={{ asset("js/app.js") }}></script>
+  
+  <title>StarWars</title>
+</head>
 
-    <style type="text/css">/* Chart.js */
-    @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
-    
-      <body style="overflow: scroll;">
-        <script src={{ asset("js/custom.js") }}></script>
-        @include('inc.banner_image')                
-        @include('inc.navbar')    
-        <div class="container-fluid">
-          <div class="row">
-            @include('inc.sidebar')
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-              @yield('content')
-          </main> 
-        </div>
-      </div>
-    </body>
+<body style="overflow: scroll;">
+  @include('inc.banner_image')                
+  @include('inc.navbar')    
+  <div class="container-fluid">
+    <div class="row">
+      @include('inc.sidebar')
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          @yield('content')
+        </main> 
+    </div>
+  </div>
+</body>
 </html>
 <!--
 {{--@yield('content')--}}
