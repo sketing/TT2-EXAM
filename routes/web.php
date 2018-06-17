@@ -25,9 +25,7 @@ Route::get('/services', 'PagesController@services');
  * \  /  izveleto produktu, lai katram produktam
  *  \/   nevajadzetu taisit atsevisku lapu.
  *************************************************/
-Route::get('/product', 'PagesController@product');
-
-Route::get('/shop', 'PagesController@shop');
+Route::get('/shop', 'ProductsController@index');
 
 Route::get('/register', 'PagesController@register');
 
@@ -45,3 +43,8 @@ Route::get('/employee/addProduct','PagesController@employee_addProduct');
 
 Route::get('/employee/editProduct', 'PagesController@employee_editProduct');
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
+Route::resource('products', 'ProductsController');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

@@ -47,7 +47,7 @@ class PagesController extends Controller
     public function register(){
         return view('pages.register');
     }
-
+/*
     public function shop(){
         $data = array(
             'title' => 'Items',
@@ -55,7 +55,7 @@ class PagesController extends Controller
         );
         return view('pages.shop')->with( $data);
     }
-
+*/
     public function user(){
         return view('pages.user');
     }
