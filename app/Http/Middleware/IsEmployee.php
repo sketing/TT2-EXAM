@@ -15,6 +15,9 @@ class IsEmployee
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(auth()->check() && $request->user()->employee == 0){
+            return redirect()->guest('home');
+        }
+            return $next($request);
     }
 }

@@ -12,32 +12,12 @@ class PagesController extends Controller
         return view('pages.index')->with('title', $title);
     }
 
-    public function services(){
-        $data = array(
-            'title' => 'Services' ,
-            'services' => ['Selling Stuff', 'Star Wars']
-        );
-        return view('pages.services')->with( $data);
-    }
-
     public function basket(){
         return view('pages.basket');
     }
 
     public function checkout(){
         return view('pages.checkout');
-    }
-
-    public function employee_addProduct(){
-        return view('pages.employee_addProduct');
-    }
-    
-    public function employee_editProduct(){
-        return view('pages.employee_editProduct');
-    }
-
-    public function employee(){
-        return view('pages.employee');
     }
 
     public function product(){
@@ -47,6 +27,15 @@ class PagesController extends Controller
     public function register(){
         return view('pages.register');
     }
+
+    public function user(){
+        return view('pages.user');
+    }
+
+    public function login(){
+        return view('pages.login');
+    }
+}
 /*
     public function shop(){
         $data = array(
@@ -56,11 +45,3 @@ class PagesController extends Controller
         return view('pages.shop')->with( $data);
     }
 */
-    public function user(){
-        return view('pages.user');
-    }
-
-    public function login(){
-        return view('pages.login');
-    }
-}

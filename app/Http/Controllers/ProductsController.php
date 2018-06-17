@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use IsAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
@@ -43,7 +44,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        if(Auth::user()->admin == 1 || Auth::user()->employee == 1)
+            return view('products.create');
+        else
+            return redirect('/products')->with('error', 'Unauthorized Page');
     }
 
     /**

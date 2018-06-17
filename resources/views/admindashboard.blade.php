@@ -5,62 +5,38 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">Dashboard</div>
-                <div class="card-body">
+                    <div class="card-header text-center">Employee Dashboard</div>
+                    <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class= "text-center">
-                        <a href="/products/create" class="btn btn-primary">CREATE</a>
+                    <h4 class= "text-center">Products</h4>
+                    <div id='toolbar' class="mb-2">
+                        <div class='wrapper text-center'>
+                            <div class="btn-group" role="group">
+                                    <a href = "/products" class=" btn btn-success">All Products</a>
+                                    <a href="/products/create" class="btn btn-primary text-center">Create Product</a>
+                            </div>
+                        </div>
                     </div>
                     <hr>
-                    <h3 class= "text-center">Products Created By You</h3>
+                    <h4 class= "text-center">List of Your minions</h4>
                     <table class="table table-stiped">
-                        <tr>
-                            <th>Title</th>
-                            <th> </th>
-                            <th class="text-right">Actions</th>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td>
-                                <p class="text-center">You are Admin</P>
-                            </td>
-                            <td> </td>
-                        </tr>
-                        @if(count($products)>0)
-                        @foreach($products as $product)
+                        <thead>
                             <tr>
-                                <td><a href="/products/{{$product->id}}">{{$product->title}}</a></td>
-                                <td> </td>
-                                <td> 
-                                    <div class="btn-toolbar float-right" role="toolbar">
-                                        <div class="btn-group mr-2" role="group">
-                                            <a href="/products/{{$product->id}}/edit" class="btn btn-success" style="">
-                                                Edit
-                                            </a>
-                                        </div>
-                                        <div class="btn-group" role="group">
-                                            {!!Form::open(['action' => ['ProductsController@destroy', $product->id],'method' => 'POST', 'class' => ''])!!}
-                                            {{Form::hidden('_method','DELETE')}}
-                                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                                            {!!Form::close()!!}
-                                        </div>
-                                    </div>
-                                </td>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Actions</th>
+                                <th>employee</th>
+                                <th>admin</th>
                             </tr>
-                        @endforeach
-                        @else
-                        <tr>
-                            <td> </td>
-                            <td>
-                                <p class="text-center">No Products</P>
-                            </td>
-                            <td> </td>
-                        </tr>
-                        @endif
+                        </thead>
+                        <tbody>
+                            @include('inc.dashusers')
+                        </tbody>
                     </table>
                 </div>
             </div>

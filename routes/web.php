@@ -26,7 +26,7 @@
  *************************************************/
 
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
-//Route::group(['middleware' => ['web', 'auth']], function(){
+Route::group(['middleware' => ['web', 'auth']], function(){
 
     Route::get('/', 'PagesController@index');
 
@@ -45,13 +45,8 @@
     Route::get('/basket', 'PagesController@basket');
 
     Route::get('/checkout', 'PagesController@checkout');
-
-    Route::get('/employee','PagesController@employee');
-
-    Route::get('/employee/addProduct','PagesController@employee_addProduct');
-
-    Route::get('/employee/editProduct', 'PagesController@employee_editProduct');
     
     Route::resource('products', 'ProductsController');
-//});
+});
     Auth::routes();
+
