@@ -5,8 +5,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -20,3 +18,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+try {
+    window.$ = window.jQuery = require('jquery');
+    window.Popper = require('popper.js').default;
+    require('bootstrap');
+} catch (e) {}
