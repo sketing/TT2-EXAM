@@ -45,6 +45,5 @@
 </html>
 
 {{--@yield('content')--}}
-  -->
 </head>
 </html>
