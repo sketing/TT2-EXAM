@@ -29,7 +29,8 @@ class CreateUsersTable extends Migration
             $table->foreign('paypal_id')->references('paypal_id')->on('paypals');
             $table->boolean('news_letter_checkbox');
             $table->string('role')->default('customer');
-            $table->rememberToken();*/
+            $table->rememberToken();
+            */
             $table->timestamps();
         });
     }
