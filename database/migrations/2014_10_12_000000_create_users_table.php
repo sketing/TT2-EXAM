@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->boolean('news_letter_checkbox');
             $table->string('role')->default('customer');
             $table->rememberToken();
-            $table->timestamps()
+            $table->timestamps();
         });
     }
 
