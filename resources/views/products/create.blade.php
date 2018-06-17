@@ -10,6 +10,14 @@
                 {{Form::label('body', 'Body')}}
                 {{Form::textarea('body', '', ['class'=>'form-control', 'id'=>'article-ckeditor', 'placeholder'=>'Body Text'])}}
         </div>
+        <div class="form-group">        
+            {{Form::label('price', 'Price')}}
+            {{Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Price'])}}
+        </div>
+        <div class="form-group">        
+            {{Form::label('product_type_id', 'Type')}}
+            {{Form::text('product_type_id', '', ['class'=>'form-control', 'placeholder'=>'Type'])}}
+        </div>
         {{form::submit('Submit',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection

@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->mediumText('body');
             $table->decimal('price', 7, 2);
             $table->unsignedInteger('product_type_id');
-            $table->foreign('product_type_id')->references('id')->on('product_types');
+            $table->foreign('product_type_id')->references('product_type_id')->on('product_types');
             $table->unsignedInteger('file_id');
             $table->foreign('file_id')->references('id')->on('files');
             $table->integer('amount_in_storage');

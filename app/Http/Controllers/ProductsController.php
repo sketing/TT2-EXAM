@@ -55,12 +55,16 @@ class ProductsController extends Controller
     {
         $this->validate($request, [
             'title'=>'required',
-            'body'=>'required'
+            'body'=>'required',
+            'price'=>'required',
+            'product_type_id'=>'required'
         ]);
         //Create Product
         $product=new Product;
         $product->title = $request->input('title');
         $product->body = $request->input('body');
+        $product->price = $request->input('price');
+        $product->product_type_id = $request->select('name', 'product_type_id');
         $product->user_id = Auth::user()->id;
         $product->save();
 
