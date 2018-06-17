@@ -26,8 +26,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $user = User::find($user_id); 
-        return view('dashboard')->with('products', $user->products);
+        $users['users'] = \App\User::all(); 
+        $products['product'] = \App\Product::all();
+        if(Auth::user()->admin == 0)
+            return view('dashboard')->with('products', $products);
+        elseif(Auth::user()->admin == 1)
+            return view('admindashboard')->with('products', $products, $users);
+        elseif(Auth::user()->employee == 1)
+            return view('employeedashboard')->with('products', $products);
+
     }
 }
