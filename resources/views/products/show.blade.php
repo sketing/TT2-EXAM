@@ -2,6 +2,8 @@
 @section('content')
 <a href="/products" class="btn btn-default">GO Back</a>
     <h1>{{$product->title}}</h1>
+    <img alt="Thumbnail [225x225]" class="card-img-top" style="width:50%" src="/storage/cover_images/{{$product->cover_image}}">
+    <br><br>
     <div>
         {!!$product->body!!}
     </div>
