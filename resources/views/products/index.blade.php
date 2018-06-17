@@ -27,7 +27,7 @@
         <div class="col-md-4">
         <div class="card mb-4 box-shadow">
             <a href="/products/{{$product->id}}">
-                <img alt="Thumbnail [225x225]" class="card-img-top" style="width:100%" src="/storage/cover_images/{{$product->cover_image}}">
+                <img alt="Thumbnail [225x225]" class="card-img-top" style="height:100%" src="/storage/cover_images/{{$product->cover_image}}">
             </a>
             <div class="card-body">
             <p class="card-text">{{$product->title}}</p>
