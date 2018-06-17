@@ -14,12 +14,12 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('user_id');
-            $table->string('username')->unique();
+            $table->increments('id');
+            //$table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');
-            $table->string('surname');
+            /*$table->string('surname');
             $table->date('dob');
             $table->unsignedInteger('adress_id');      
             $table->foreign('adress_id')->references('adress_id')->on('adresses');
@@ -29,8 +29,8 @@ class CreateUsersTable extends Migration
             $table->foreign('paypal_id')->references('paypal_id')->on('paypals');
             $table->boolean('news_letter_checkbox');
             $table->string('role')->default('customer');
-            $table->rememberToken();
-            $table->timestamps()
+            $table->rememberToken();*/
+            $table->timestamps();
         });
     }
 

@@ -15,9 +15,9 @@ class CreateInBasketsTable extends Migration
     {
         Schema::create('in_baskets', function (Blueprint $table) {
             $table->unsignedInteger('basket_id');
-            $table->foreign('basket_id')->references('basket_id')->on('shopping_baskets');
+            $table->foreign('basket_id')->references('id')->on('shopping_baskets');
             $table->unsignedInteger('product_id');
-            $table->foreign('product_id')->references('product_id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CreatePaypalsTable extends Migration
     public function up()
     {
         Schema::create('paypals', function (Blueprint $table) {
-            $table->increments('credit_card_id');
+            $table->increments('paypal_id');
             $table->char('credit_card_number', 16);
             $table->timestamps();
         });

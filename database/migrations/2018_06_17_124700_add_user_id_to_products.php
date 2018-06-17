@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreditCardTable extends Migration
+
+class AddUserIdToProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +14,10 @@ class CreditCardTable extends Migration
      */
     public function up()
     {
-         Schema::create('Credit_Card', function(Blueprint $table){
-            $table->increments('Credit_card_id');
-            $table->char('Credit_card_number', 16);
-            $table->timestamps();
+        Schema::table('products',function($table){
+            $table->integer('id');
         });
+            
     }
 
     /**
@@ -27,6 +27,8 @@ class CreditCardTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('products',function($table){
+            $table->dropCollumn('id');
+        });
     }
 }

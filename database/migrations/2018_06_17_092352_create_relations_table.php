@@ -15,9 +15,9 @@ class CreateRelationsTable extends Migration
     {
         Schema::create('relations', function (Blueprint $table) {
             $table->unsignedInteger('keyword_id');
-            $table->foreign('keyword_id')->references('keyword_id')->on('keywords');
+            $table->foreign('keyword_id')->references('id')->on('keywords');
             $table->unsignedInteger('product_id');
-            $table->foreign('product_id')->references('product_id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

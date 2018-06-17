@@ -14,10 +14,10 @@ class CreateShoppingBasketsTable extends Migration
     public function up()
     {
         Schema::create('shopping_baskets', function (Blueprint $table) {
-            $table->increments('basket_id');
+            $table->increments('id');
             $table->integer('amount');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
