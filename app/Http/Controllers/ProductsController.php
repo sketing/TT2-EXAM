@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 use DB;
 
@@ -57,14 +58,35 @@ class ProductsController extends Controller
             'title'=>'required',
             'body'=>'required',
             'price'=>'required',
-            'product_type'=>'required'
+            'cover_image' => 'image|nullable|max:1999',
+            'amount_in_storage'=>'required',
         ]);
+
+        //Handle File Upload
+        if($request->hasFile('cover_image'))
+        {
+            //Get fileName with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        } 
+        else 
+        {
+            $fileNameToStore = 'noimage.jpg';
+        }
         //Create Product
         $product=new Product;
         $product->title = $request->input('title');
         $product->body = $request->input('body');
         $product->price = $request->input('price');
-        $product->product_type = $request->input('price');
+        $product->cover_image = $fileNameToStore;
+        $product->amount_in_storage = $request->input('amount_in_storage');
         $product->user_id = Auth::user()->id;
         $product->save();
 
@@ -112,10 +134,29 @@ class ProductsController extends Controller
             'title'=>'required',
             'body'=>'required'
         ]);
+
+        if($request->hasFile('cover_image'))
+        {
+            //Get fileName with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
+
         //Create Product
         $product = Product::find($id);
         $product->title = $request->input('title');
         $product->body = $request->input('body');
+        if($request->hasFile('cover_image'))
+        {
+            $product->cover_image = $fileNameToStore;
+        }
         $product->save();
 
         return redirect('/products')->with('success', 'Product Updated');
@@ -133,6 +174,13 @@ class ProductsController extends Controller
         if(Auth::user()->id !== $product->user_id){
             return redirect('/products')->with('error', 'Unauthorized Page');
         }
+
+        if($product->cover_image != 'noimage.jpg')
+        {
+            //Delete Image
+            Storage::delete('public/cover_images/'.$product->cover_image);
+        }
+
         $product->delete();
         //Check if correct user
         
