@@ -49,7 +49,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'username' => 'required|string|min:6|max:50|unique:users',
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -64,9 +66,30 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'username' => $data['username'],
             'name' => $data['name'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
 }
+/*
+    $table->increments('id');
+    $table->string('username')->unique();
+    $table->string('email')->unique();
+    $table->string('password');
+    $table->string('name');
+    $table->string('surname');
+    $table->date('dob');
+    $table->unsignedInteger('adress_id');      
+    $table->foreign('adress_id')->references('adress_id')->on('adresses');
+    $table->unsignedInteger('credit_card_id');
+    $table->foreign('credit_card_id')->references('credit_card_id')->on('credit_cards');
+    $table->unsignedInteger('paypal_id');
+    $table->foreign('paypal_id')->references('paypal_id')->on('paypals');
+    $table->boolean('news_letter_checkbox');
+    $table->string('role')->default('customer');
+    $table->rememberToken();
+    $table->timestamps();
+*/
