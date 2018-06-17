@@ -47,6 +47,8 @@ Route::group(['middleware' => ['web', 'auth']], function(){
     Route::get('/checkout', 'PagesController@checkout');
     
     Route::resource('products', 'ProductsController');
+    Route::get('/user/{user}',  ['as' => 'users.edit', 'uses' => 'UsersController@edit']);
+    Route::patch('user/{user}/update',  ['as' => 'users.update', 'uses' => 'UsersController@update']);
 });
     Auth::routes();
-
+    

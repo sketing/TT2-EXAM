@@ -33,14 +33,14 @@
             <p class="card-text">{{$product->title}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <a href="/products/{{$product->id}}" class="btn btn-sm btn-outline-secondary">
-                        View
-                    </a>
-                    @if(Auth::user()->admin == 1 || Auth::user()->employee == 1)
+                        <a href="/products/{{$product->id}}" class="btn btn-sm btn-outline-secondary">
+                            View
+                        </a>
+                        @if(Auth::user()->admin == 1 || Auth::user()->employee == 1)
                         <a href="/products/{{$product->id}}/edit" class="btn btn-sm btn-outline-secondary">
                             Edit
                         </a>
-                    @endif
+                        @endif
                     </div    
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>

@@ -16,6 +16,7 @@
                     <hr>
                     <div class= "text-center">
                     <a href="/products/create" class="btn btn-primary text-center">Create Product</a>
+                    <a href="/user/{{Auth::user()->id}}" class="btn btn-primary text-center">Update Profile</a>
                     </div>
                     <hr>
                     

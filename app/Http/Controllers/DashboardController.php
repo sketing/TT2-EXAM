@@ -29,10 +29,10 @@ class DashboardController extends Controller
         $products = Product::all();
         $users = User::all();
         if(Auth::user()->admin == 0 && Auth::user()->employee == 0)
-            return view('dashboard')->with('products', $products);
+            return redirect('/user/'.Auth::user()->id);
         if(Auth::user()->admin == 1)
             return view('admindashboard')->with('products', $products)->with('users', $users);
-        elseif(Auth::user()->employee == 1)
+        else if(Auth::user()->employee == 1)
             return view('employeedashboard')->with('products', $products);
 
     }

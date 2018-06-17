@@ -27,10 +27,12 @@
                         <thead>
                             <tr>
                                 <th>Username</th>
+                                <th>E-mail</th>
+                                <!--
                                 <th>Name</th>
                                 <th>Surname</th>
-                                <th>Actions</th>
-                                <th>employee</th>
+                                -->
+                                <th>emp</th>
                                 <th>admin</th>
                             </tr>
                         </thead>

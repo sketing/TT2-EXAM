@@ -37,10 +37,6 @@
         </div>
       </div>
     </div>
-    <!-- This Shit is not working -->
-    <script>
-        CKEDITOR.replace('article-ckeditor');
-    </script>
   </body>
 </html>
 
