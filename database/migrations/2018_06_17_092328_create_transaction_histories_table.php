@@ -14,9 +14,9 @@ class CreateTransactionHistoriesTable extends Migration
     public function up()
     {
         Schema::create('transaction_histories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('transaction_history_id');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });
     }

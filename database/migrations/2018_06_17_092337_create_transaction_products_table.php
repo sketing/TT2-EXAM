@@ -15,9 +15,9 @@ class CreateTransactionProductsTable extends Migration
     {
         Schema::create('transaction_products', function (Blueprint $table) {
             $table->unsignedInteger('transaction_id');
-            $table->foreign('transaction_id')->references('id')->on('transaction_histories');
+            $table->foreign('transaction_id')->references('transaction_id')->on('transaction_histories');
             $table->unsignedInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('product_id')->on('products');
             $table->decimal('price_sold_for', 7, 2);
             $table->timestamps();
         });

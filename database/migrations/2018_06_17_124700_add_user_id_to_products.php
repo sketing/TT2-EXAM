@@ -15,7 +15,7 @@ class AddUserIdToProducts extends Migration
     public function up()
     {
         Schema::table('products',function($table){
-            $table->integer('id');
+            $table->integer('user_id');
         });
             
     }
@@ -28,7 +28,7 @@ class AddUserIdToProducts extends Migration
     public function down()
     {
         Schema::table('products',function($table){
-            $table->dropCollumn('id');
+            $table->dropCollumn('user_id');
         });
     }
 }
