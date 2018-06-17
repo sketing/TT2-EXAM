@@ -23,9 +23,6 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/login">Login</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="/products">Shop</a>
             </li>
         
@@ -52,7 +49,7 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link " href="/Basket">Basket</a>
+                        <a class="nav-link " href="/basket">Basket</a>
                 </li>
             @else
                 <li class="nav-item dropdown">
