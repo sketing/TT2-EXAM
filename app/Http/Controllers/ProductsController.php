@@ -32,7 +32,7 @@ class ProductsController extends Controller
         //$products=Product::orderBy('title','desc')->take(1)->get();
         //$products=Product::orderBy('title','desc')->get();
 
-        $products=Product::orderBy('created_at','asc')->paginate(18);
+        $products=Product::orderBy('created_at','asc')->paginate(9);
         return view('products.index')->with('products', $products);
     }
 
@@ -187,4 +187,5 @@ class ProductsController extends Controller
         
         return redirect('/products')->with('success', 'Product Removed');
     }
+
 }

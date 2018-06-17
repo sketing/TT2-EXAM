@@ -42,7 +42,7 @@
 
     Route::get('/user', 'PagesController@user');
 
-    Route::get('/basket', 'PagesController@basket');
+    Route::get('/basket', ['uses' => 'PagesController@getBasket', 'as' => 'product.shoppingBasket']);
 
     Route::get('/checkout', 'PagesController@checkout');
 
@@ -53,5 +53,7 @@
     Route::get('/employee/editProduct', 'PagesController@employee_editProduct');
     
     Route::resource('products', 'ProductsController');
+
+    Route::get('/add-to-basket/{id}', ['uses' => 'PagesController@getAddToBasket', 'as' => 'product.getAddToBasket']);
 //});
     Auth::routes();

@@ -49,7 +49,9 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link " href="/basket">Basket</a>
+                        <a class="nav-link " href="/basket">
+                            Basket
+                        </a>
                 </li>
             @else
                 <li class="nav-item dropdown">

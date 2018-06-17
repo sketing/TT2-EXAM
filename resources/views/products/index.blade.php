@@ -37,7 +37,12 @@
                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                     </a>
                     @if(!Auth::guest())
-                    <a href="/basket">
+                    <a href="{{ route('product.getAddToBasket', ['id' => $product->id]) }}">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                    </a>
+                    @endif
+                    @if(Auth::guest())
+                    <a href="/login">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
                     </a>
                     @endif

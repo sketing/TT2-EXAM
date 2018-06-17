@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use App\Product;
+use App\Basket;
 
 class PagesController extends Controller
 {
@@ -62,5 +65,26 @@ class PagesController extends Controller
 
     public function login(){
         return view('pages.login');
+    }
+
+    public function getAddToBasket(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $oldBasket = Session::has('basket') ? Session::get('basket') : null;
+        $basket = new Basket($oldBasket);
+        $basket->add($product, $product->id);
+        $request->session()->put('basket', $basket);
+        return redirect()->route('products.index');
+    }
+
+    public function getBasket()
+    {
+        if(Session::has('basket'))
+        {
+            return view('products.shopping-basket');
+        }
+        $oldBasket = Session::get('basket');
+        $basket = new Basket($oldBasket);
+        return view('products.shopping-basket', ['products' => $basket->items, 'totalPrice' => $basket->totalPrice]);
     }
 }
