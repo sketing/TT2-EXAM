@@ -12,7 +12,7 @@
         {!!$product->body!!}
     </div>
     <hr>
-    <small>Written on {{$product->created_at}} by {{$product->user->name}}</small>
+    <small>Added @if($product->created_at!==NULL)on {{$product->created_at}}@endif by {{$product->user->name}}</small>
     <hr>
     @if(!Auth::guest())
         @csrf
