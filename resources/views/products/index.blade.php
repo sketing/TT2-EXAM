@@ -52,8 +52,8 @@
                             @endif 
                         @endif
                     </div>
-                    <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>
+                <small class="text-muted">PRICE: {{$product->price}}€</small>
             </div>
         </div>
         </div>
