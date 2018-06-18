@@ -25,24 +25,31 @@
     <div class="row" >
     @foreach($products as $product)
         <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-            <a href="/products/{{$product->id}}">
-                <img alt="Thumbnail [225x225]" class="card-img-top" style="width:100%" src="/storage/cover_images/{{$product->cover_image}}">
+        <div class="card mb-4 box-shadow" style="height: 400px">
+            <a class="text-center" href="/products/{{$product->id}}">
+                <img alt="Thumbnail [225x225]" class="card-img-top" style="max-height: 75%; max-width: 75%;" src="/storage/cover_images/{{$product->cover_image}}">
             </a>
-            <div class="card-body">
+            <div class="card-body" style="position:absolute; bottom:0;">
             <p class="card-text">{{$product->title}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="/products/{{$product->id}}" class="btn btn-sm btn-outline-secondary">
-                            View
+                        <a href="/products/{{$product->id}}">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                         </a>
-                        {{--
-                        @if(Auth::user()->admin == 1 || Auth::user()->employee == 1)
-                        <a href="/products/{{$product->id}}/edit" class="btn btn-sm btn-outline-secondary">
-                            Edit
+                    @if(!Auth::guest())
+                        <a href="{{ route('product.getAddToBasket', ['id' => $product->id]) }}">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
                         </a>
-                        @endif
-                        --}}
+                    @endif
+                    @if(Auth::guest())
+                        <a href="/login">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                        </a>
+                    @endif
+                    @if(!Auth::guest())
+                        <a href="/products/{{$product->id}}/edit">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </a>
                     </div>    
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>

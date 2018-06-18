@@ -48,7 +48,7 @@ Route::group(['middleware' => ['web', 'auth']], function(){
 
     Route::get('/user', 'PagesController@user');
 
-    Route::get('/basket', 'PagesController@basket');
+    Route::get('/basket', ['uses' => 'PagesController@getBasket', 'as' => 'product.getBasket']);
 
     Route::get('/checkout', 'PagesController@checkout');
 
@@ -59,5 +59,12 @@ Route::group(['middleware' => ['web', 'auth']], function(){
     Route::post('/products/{product}/review/submit','ReviewsController@store');
 
     Route::resource('reviews', 'ReviewsController');
+
+    Route::get('/add-to-basket/{id}', ['uses' => 'PagesController@getAddToBasket', 'as' => 'product.getAddToBasket']);
+
+    Route::get('/reduce/{id}', ['uses' => 'PagesController@getReduceByOne', 'as' => 'product.getReduceByOne']);
 });
+
+    Route::resource('products', 'ProductsController');
+
     Auth::routes();
