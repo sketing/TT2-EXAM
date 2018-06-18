@@ -74,7 +74,10 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/basket">Basket</a>
+                    <a class="nav-link " href="/basket">
+                        Basket
+                        <span class="badge">{{ Session::has('basket') ? Session::get('basket')->totalQty : '' }}</span>
+                    </a>
                 </li>
             @endguest
             <!--basket, create and search-->

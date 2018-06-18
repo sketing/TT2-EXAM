@@ -42,7 +42,7 @@
 
     Route::get('/user', 'PagesController@user');
 
-    Route::get('/basket', ['uses' => 'PagesController@getBasket', 'as' => 'product.shoppingBasket']);
+    Route::get('/basket', ['uses' => 'PagesController@getBasket', 'as' => 'product.getBasket']);
 
     Route::get('/checkout', 'PagesController@checkout');
 

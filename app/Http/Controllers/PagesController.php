@@ -79,12 +79,12 @@ class PagesController extends Controller
 
     public function getBasket()
     {
-        if(Session::has('basket'))
+        if(!Session::has('basket'))
         {
-            return view('products.shopping-basket');
+            return view('products.basket');
         }
         $oldBasket = Session::get('basket');
         $basket = new Basket($oldBasket);
-        return view('products.shopping-basket', ['products' => $basket->items, 'totalPrice' => $basket->totalPrice]);
+        return view('products.basket', ['products' => $basket->items, 'totalPrice' => $basket->totalPrice]);
     }
 }
