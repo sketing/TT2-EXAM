@@ -13,7 +13,7 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
+        return redirect('products.index');
     }
 
     /**

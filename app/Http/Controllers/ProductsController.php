@@ -7,6 +7,7 @@ use IsAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
+use App\Review;
 use DB;
 
 class ProductsController extends Controller
@@ -106,7 +107,8 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('products.show')->with('product', $product);
+        $reviews = Review::where('product_id', $product->id)->get();
+        return view('products.show')->with('product', $product)->with('reviews', $reviews);
     }
 
     /**

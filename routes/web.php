@@ -27,15 +27,20 @@
 
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
     
-    Route::get('/dashboard', 'DashboardController@index');
+
+    Route::get('/shop', 'ProductsController@index');
+        
+    Route::get('/', 'ProductsController@index');
+
+    Route::resource('products', 'ProductsController');
+
 
 Route::group(['middleware' => ['web', 'auth']], function(){
 
-    Route::get('/', 'ProductsController@index');
+    
+    Route::get('/dashboard', 'DashboardController@index');
 
     Route::get('/services', 'PagesController@services');
-   
-    Route::get('/shop', 'ProductsController@index');
     
     Route::get('/register', 'PagesController@register');
 
@@ -46,11 +51,13 @@ Route::group(['middleware' => ['web', 'auth']], function(){
     Route::get('/basket', 'PagesController@basket');
 
     Route::get('/checkout', 'PagesController@checkout');
-    
-    Route::resource('products', 'ProductsController');
 
     Route::get('/user/{user}',  ['as' => 'users.edit', 'uses' => 'UsersController@edit']);
 
     Route::patch('user/{user}/update',  ['as' => 'users.update', 'uses' => 'UsersController@update']);
+
+    Route::post('/products/{product}/review/submit','ReviewsController@store');
+
+    Route::resource('reviews', 'ReviewsController');
 });
     Auth::routes();

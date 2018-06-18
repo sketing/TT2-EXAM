@@ -36,11 +36,13 @@
                         <a href="/products/{{$product->id}}" class="btn btn-sm btn-outline-secondary">
                             View
                         </a>
+                        {{--
                         @if(Auth::user()->admin == 1 || Auth::user()->employee == 1)
                         <a href="/products/{{$product->id}}/edit" class="btn btn-sm btn-outline-secondary">
                             Edit
                         </a>
                         @endif
+                        --}}
                     </div>    
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>
