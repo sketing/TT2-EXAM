@@ -28,7 +28,7 @@
     //bez shi varetu iztikt, ja sanak plaanotaa PRODUCT lapa
 Route::group(['middleware' => ['web', 'auth']], function(){
 
-    Route::get('/', 'PagesController@index');
+    Route::get('/', 'ProductsController@index');
 
     Route::get('/services', 'PagesController@services');
     
