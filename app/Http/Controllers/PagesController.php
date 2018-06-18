@@ -77,6 +77,18 @@ class PagesController extends Controller
         return redirect()->route('products.index');
     }
 
+    public function getReduceByOne($id) {
+        $oldBasket = Session::has('basket') ? Session::get('basket') : null;
+        $basket = new Basket($oldBasket);
+        $basket->reduceByOne($id);
+        if (count($basket->items) > 0) {
+            Session::put('basket', $basket);
+        } else {
+            Session::forget('basket');
+        }
+        return redirect()->route('products.basket');
+    }
+
     public function getBasket()
     {
         if(!Session::has('basket'))

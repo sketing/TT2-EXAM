@@ -16,10 +16,6 @@ class Basket
             $this->totalQty = $oldBasket->totalQty;
             $this->totalPrice = $oldBasket->totalPrice;
         }
-        else
-        {
-
-        }
     }
 
     public function add($item, $id)
@@ -37,5 +33,13 @@ class Basket
         $this->items[$id] = $storedItem;
         $this->totalQty++;
         $this->totalPrice += $item->price;
+    }
+
+    public function getReduceByOne($id)
+    {
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['price'];
     }
 }

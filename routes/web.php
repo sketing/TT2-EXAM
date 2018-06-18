@@ -55,5 +55,7 @@
     Route::resource('products', 'ProductsController');
 
     Route::get('/add-to-basket/{id}', ['uses' => 'PagesController@getAddToBasket', 'as' => 'product.getAddToBasket']);
+
+    Route::get('/reduce/{id}', ['uses' => 'PagesController@getReduceByOne', 'as' => 'product.getReduceByOne']);
 //});
     Auth::routes();
