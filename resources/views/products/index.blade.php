@@ -36,21 +36,23 @@
                         <a href="/products/{{$product->id}}">
                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                         </a>
-                    @if(!Auth::guest())
-                        <a href="{{ route('product.getAddToBasket', ['id' => $product->id]) }}">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
-                        </a>
-                    @endif
-                    @if(Auth::guest())
-                        <a href="/login">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
-                        </a>
-                    @endif
-                    @if(!Auth::guest())
-                        <a href="/products/{{$product->id}}/edit">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </a>
-                    </div>    
+                        @if(!Auth::guest())
+                            <a href="{{ route('product.getAddToBasket', ['id' => $product->id]) }}">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </a>
+                         @else
+                            <a href="/login">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </a>
+                        @endif
+                        @if(!Auth::guest())
+                            @if( Auth::user()->admin == 1 || Auth::user()->employee == 1)
+                            <a href="/products/{{$product->id}}/edit">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </a>
+                            @endif 
+                        @endif
+                    </div>
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>
             </div>
