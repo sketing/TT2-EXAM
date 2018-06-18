@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Unleashed;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +14,6 @@ class Review extends Model
     public $timestamps = true;
 
     function product() {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('Unleashed\Product');
     }
 }

@@ -21,8 +21,6 @@
     },
     "dependencies": {
         "ajv": "^6.5.0",
-        "bootstrap-datepicker": "^1.8.0",
-        "ckeditor": "^4.9.2",
         "gulp": "^4.0.0"
     }
 }

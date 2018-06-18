@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Unleashed;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Unleashed;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     function products(){
-        return $this->hasMany('App\Product');
+        return $this->hasMany('Unleashed\Product');
     }
 }

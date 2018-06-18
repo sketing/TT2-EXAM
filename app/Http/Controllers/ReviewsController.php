@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Unleashed\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Review;
+use Unleashed\Review;
 
 class ReviewsController extends Controller
 {

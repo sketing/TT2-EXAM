@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Unleashed\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
-use App\Product;
-use App\Basket;
+use Unleashed\Product;
+use Unleashed\Basket;
 
 class PagesController extends Controller
 {

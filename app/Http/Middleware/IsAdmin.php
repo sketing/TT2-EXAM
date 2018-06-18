@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Unleashed\Http\Middleware;
 
 use Closure;
 

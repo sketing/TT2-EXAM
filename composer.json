@@ -9,7 +9,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "laravelcollective/html": "^5.4.0",
+        "laravelcollective/html": "^5.2.0",
         "unisharp/laravel-ckeditor": "^4.7"
     },
     "require-dev": {
@@ -25,7 +25,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "Unleashed\\": "app/"
         }
     },
     "autoload-dev": {

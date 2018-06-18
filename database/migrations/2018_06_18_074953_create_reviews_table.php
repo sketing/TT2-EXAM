@@ -19,6 +19,7 @@ class CreateReviewsTable extends Migration
             $table->mediumText('body', 500);
             //$table->tinyInteger('rating');
             //$table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });

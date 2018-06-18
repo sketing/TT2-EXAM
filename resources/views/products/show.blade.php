@@ -4,7 +4,7 @@
     <h1>{{$product->title}}</h1>
     <img alt="Thumbnail [225x225]" class="card-img-top" style="width:50%" src="/storage/cover_images/{{$product->cover_image}}">
     <br><br>
-    <div>
+        <div>
             <p>Price:  {{$product->price}}$</p>
         </div>
         <hr>
@@ -41,6 +41,7 @@
             <div>
         
     @endif
+    @if(count($reviews))
     <div class="album py-bg-light">
         <div class="container">
                 @foreach($reviews as $review)
@@ -48,7 +49,7 @@
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
                                 <h5 class="card-title">{{$review->title}}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Written on: {{$product->created_at}}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">Written on: {{$review->created_at}}</h6>
                                 <p class="card-text">{{$review->body}}</p>
                             </div>
                         </div>
@@ -57,5 +58,6 @@
             </div>
         </div>
     </div>
+    @endif
 </div>
 @endsection

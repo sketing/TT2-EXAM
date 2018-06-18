@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Unleashed\Http\Controllers;
 
 use Auth;
 use IsAdmin;
 use Validator;
-use App\User;
+use Unleashed\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;

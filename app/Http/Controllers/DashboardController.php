@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Unleashed\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Product;
+use Unleashed\User;
+use Unleashed\Product;
 use Auth;
 
 class DashboardController extends Controller

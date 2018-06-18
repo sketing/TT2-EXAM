@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Unleashed\Http\Controllers;
 
 use Auth;
 use IsAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Product;
-use App\Review;
+use Unleashed\Product;
+use Unleashed\Review;
 use DB;
 
 class ProductsController extends Controller
