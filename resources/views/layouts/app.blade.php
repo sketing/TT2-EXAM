@@ -19,7 +19,6 @@
 
       <!-- Styles -->
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <meta charset="utf-8">
   </head>
 
   <body style="overflow: scroll;">
@@ -29,11 +28,12 @@
       <div class="container-fluid">
         <div class="row">
           @include('inc.sidebar')
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding-top:30px;">
-              <div class="container">
-                @include('inc.messages')
-                @yield('content')
-              </div>
+          <main  class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding-top:30px;">
+            <div class="container">
+              @include('inc.messages')
+              @yield('content')
+            </div>
+          </main>
         </div>
       </div>
     </div>
@@ -41,5 +41,3 @@
 </html>
 
 {{--@yield('content')--}}
-</head>
-</html>

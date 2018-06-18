@@ -41,7 +41,7 @@
                             Edit
                         </a>
                         @endif
-                    </div    
+                    </div>    
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>
             </div>
@@ -51,10 +51,9 @@
     </div>
     </div>
     </div>
-    </div class="row">
+    <div class="row">
             {{$products->links()}}
     </div>
-</div>
     
     @endif
 @endsection

@@ -48,8 +48,8 @@ class UsersController extends Controller
         
         $user = User::find($id);
         $user->username = $request->input('username');
-        $user->name = $request->input('surname');
-        $user->surname = $request->input('name');
+        $user->name = $request->input('name');
+        $user->surname = $request->input('surname');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
 

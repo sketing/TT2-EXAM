@@ -119,7 +119,7 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         //Check if correct user
-        if(Auth::user()->id !== $product->user_id){
+        if(Auth::user()->admin !== 1 && Auth::user()->employee !== 1){
             return redirect('/products')->with('error', 'Unauthorized Page');
         }
         return view('products.edit')->with('product', $product);
@@ -175,7 +175,7 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-        if(Auth::user()->id !== $product->user_id){
+        if(Auth::user()->admin !== 1 && Auth::user()->employee !== 1){
             return redirect('/products')->with('error', 'Unauthorized Page');
         }
 
