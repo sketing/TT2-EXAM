@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
 
 class ReviewsController extends Controller
 {
@@ -34,7 +35,19 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            'product_id' => 'required'
+        ]);
+        //creation
+        $product = $request->input('product_id');
+        $review = new Review;
+        $review->title = $request->input('title');
+        $review->body = $request->input('body');
+        $review->product_id = $request->input('product_id');
+        $review->save();
+        return redirect('/products/'.$product)->with('success', 'Review Created');
     }
 
     /**

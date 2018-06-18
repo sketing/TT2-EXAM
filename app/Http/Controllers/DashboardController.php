@@ -29,7 +29,7 @@ class DashboardController extends Controller
         $products = Product::all();
         $users = User::all();
         if(Auth::user()->admin == 0 && Auth::user()->employee == 0){
-            return redirect('/')->with('success', 'Merch Unleashed!');
+            return redirect('/user/'.Auth::user()->id);
         }
         elseif(Auth::user()->admin == 1){
             return view('admindashboard')->with('products', $products)->with('users', $users);
