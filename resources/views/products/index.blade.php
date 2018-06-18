@@ -50,7 +50,8 @@
                         <a href="/products/{{$product->id}}/edit">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                         </a>
-                    </div>    
+                    </div>
+                    @endif    
                     <small class="text-muted ">PRICE: {{$product->price}}€</small>
                 </div>
             </div>
